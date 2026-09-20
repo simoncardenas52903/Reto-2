@@ -7,6 +7,59 @@
     <title>Rick & Morty Buscador de Personajes</title>
 </head>
 <body>
+    <!-- header>h1{Rick & Morty}+h2{Buscador de Personajes}+p{Bienvenido al Buscador de Personajes de la serie animada Rick & Morty} -->
+    <header>
+        <h1>Rick & Morty</h1>
+        <h2>Buscador de Personajes</h2>
+        <p>Bienvenido al Buscador de Personajes de la serie animada Rick & Morty</p>
+    </header>
+    <!-- section>h2{Filtros}+input:text#nombre[placeholder="Buscar por nombre..."]+select#estado>option*4 -->
+    <section>
+        <h2>Filtros</h2>
+        <input type="text" name="" id="nombre" placeholder="Buscar por nombre...">
+        <select id="estado">
+            <option value="">Todos los estados</option>
+            <option value="Alive">Vivo</option>
+            <option value="Dead">Muerto</option>
+            <option value="Unknown">Desconocido</option>
+        </select>
+        <!-- select#especie>option*3 -->
+        <select id="especie">
+            <option value="">Todas las especies</option>
+            <option value="Human">Humano</option>
+            <option value="Alien">Alien</option>
+        </select>
+        <!-- select#genero>option*3 -->
+        <select id="genero">
+            <option value="">Todos los géneros</option>
+            <option value="Male">Masculino</option>
+            <option value="Female">Femenino</option>
+        </select>
+        <!-- select#orden>option*3 -->
+        <select id="orden">
+            <option value="">Orden original</option>
+            <option value="az">Nombre A-Z</option>
+            <option value="za">Nombre Z-A</option>
+        </select>
+    </section>
+    <!-- input:number#buscarId[placeholder="Buscar personaje por ID"]+button#botonBuscar{Buscar} -->
+    <input type="number" id="buscarId" placeholder="Buscar personaje por ID">
+    <button id="botonBuscar">Buscar</button>
+    <!-- section>h2{Estadísticas}+p#*6 -->
+    <section>
+        <h2>Estadísticas</h2>
+        <p id="cantidad"></p>
+        <p id="vivos"></p>
+        <p id="muertos"></p>
+        <p id="desconocidos"></p>
+        <p id="hayVivos"></p>
+        <p id="todosDesconocidos"></p>
+    </section>
+    <!-- section>h2{Personajes}+div#personajes -->
+    <section>
+        <h2>Personajes</h2>
+        <div id="personajes"></div>
+    </section>
     <script src="js/app.js"></script>
 </body>
 </html>
