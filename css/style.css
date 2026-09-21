@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 42px;
+    color: #2ecc71;
+    margin-bottom: 8px;
+}
+header h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+header p {
+    color: #666;
+    font-size: 16px;
+}
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+section:first-of-type{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+section:first-of-type h2{
+    width: 100%;
+}
+input, select {
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: #2ecc71;
+}
+#buscarId {
+    width: 220px;
+    margin-bottom: 25px;
+}
+#botonBuscar {
+    height: 40px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2ecc71;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+#botonBuscar:hover {
+    background-color: #27ae60;
+}
+#cantidad, #vivos, #muertos, #desconocidos,
+#hayVivos, #todosDesconocidos {
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #f1f3f5;
+    border-radius: 6px;
+}
+#personajes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
