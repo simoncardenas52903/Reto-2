@@ -9,7 +9,7 @@ const selectOrden = document.querySelector("#orden");
 const cantidad = document.querySelector("#cantidad");
 const vivos = document.querySelector("#vivos");
 const muertos = document.querySelector("#muertos");
-const desconocidos = document.querySelector("#desconocidos");
+const desconocidos = document.querySelector("#unknown");
 const buscarId = document.querySelector("#buscarId");
 const botonBuscar = document.querySelector("#botonBuscar");
 const hayVivos = document.querySelector("#hayVivos");
@@ -19,10 +19,10 @@ async function obtenerPersonajes() {
     const conexion = await fetch("https://rickandmortyapi.com/api/character");
     const respuesta = await conexion.json();
     personajes = respuesta.results;
-    mostrarPersonajes(personajes);
     calcularEstadisticas(personajes);
     verificarVivos(personajes);
     verificarDesconocidos(personajes);
+    mostrarPersonajes(personajes);
 }
 
 function mostrarPersonajes(lista) {
@@ -52,10 +52,10 @@ function filtrarPersonajes() {
 
 function ordenarPersonajes(lista) {
     if (selectOrden.value === "az") {
-        lista.sort((a,b) => a.name.localeCompare(b.name));
+        return [...lista].sort((a,b) => a.name.localeCompare(b.name));
     }
     if (selectOrden.value === "za") {
-        lista.sort((a,b) => b.name.localeCompare(a.name));
+        return [...lista].sort((a,b) => b.name.localeCompare(a.name));
     }
     return lista;
 }
@@ -114,7 +114,7 @@ function verificarDesconocidos(lista) {
 function actualizarVista() {
     let resultado = filtrarPersonajes();
     resultado = ordenarPersonajes(resultado);
-    resultado = calcularEstadisticas(resultado);
+    calcularEstadisticas(resultado);
     verificarVivos(resultado);
     verificarDesconocidos(resultado);
     mostrarPersonajes(resultado);
